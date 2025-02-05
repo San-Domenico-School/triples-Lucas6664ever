@@ -1,27 +1,22 @@
-public class Scorekeeper {
-    // Fields
+public class Scorekeeper  
+{
     private static int deckSize;
     private static int score;
-    private static long startTime;
-
-    // Constructor
-    public Scorekeeper() {
-        startTime = System.currentTimeMillis(); // Initialize start time
+    private static long startTime = System.currentTimeMillis();
+   
+    public static void setDeckSize(int deckSize)
+    {
+        Scorekeeper.deckSize = deckSize;
     }
-
-    // Setter for deckSize
-    public static void setDeckSize(int size) {
-        deckSize = size; // Assign the input parameter to deckSize
+   
+    public static void updateScore()
+    {
+        score += 27;
     }
-
-    // Method to update the score
-    public static void updateScore() {
-        // Increment score, logic can be customized as needed (e.g., based on finding a triple)
-        score += 10; // Example: increase score by 10
+   
+    public static int getScore()
+    {
+        return score;
     }
-
-    // Getter for score
-    public static int getScore() {
-        return score; // Return the current score
-    }
+   
 }

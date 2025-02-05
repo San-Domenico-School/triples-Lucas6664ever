@@ -1,75 +1,70 @@
-import greenfoot.*; // Import Greenfoot library
+import greenfoot.*;
 
+/**
+ * Game Board for Triples
+ *
+ * @author (your name)
+ * @version (a version number or a date)
+ */
 
-
-// Card class
-public class Card extends Actor 
+public class Card extends Actor
 {
-    // Enumerations for Shape and Color
-    enum Shape { SQUARE, TRIANGLE, CIRCLE, NO_SHAPE }
-    enum Color { RED, GREEN, BLUE, NO_COLOR }
-
-    // Fields
+    protected enum Shape{TRIANGLE, SQUARE, CIRCLE, NO_SHAPE}
+    protected enum Color{RED, GREEN, BLUE, NO_COLOR}
     private Shape shape;
     private Color color;
-    private boolean isSelected;
     private GreenfootImage cardImage, selectedCardImage;
     private int numberOfShapes, shading;
+    private boolean isSelected;
 
-    // Constructor
-    public Card(Shape shape, Color color, int numberOfShapes, int shading, GreenfootImage cardImage, GreenfootImage selectedCardImage) {
-        this.shape = shape;
-        this.color = color;
+    Card(Shape shape, Color color, int numberOfShapes, int shading,
+        GreenfootImage cardImage, GreenfootImage selectedCardImage){
         this.numberOfShapes = numberOfShapes;
         this.shading = shading;
+        this.shape = shape;
+        this.color = color;
         this.cardImage = cardImage;
         this.selectedCardImage = selectedCardImage;
-        this.isSelected = false; // Default value
-        setImage(cardImage); // Set the initial image
+        setImage(cardImage);
     }
 
-    // Getters
-    public Shape getShape() {
+    protected Shape getShape()
+    {
         return shape;
     }
 
-    public Color getColor() {
+    protected Color getColor()
+    {
         return color;
     }
-
-    public boolean getIsSelected() {
-        return isSelected;
-    }
-
-    public GreenfootImage getCardImage() {
-        return cardImage;
-    }
-
-    public GreenfootImage getSelectedCardImage() {
-        return selectedCardImage;
-    }
-
-    public int getNumberOfShapes() {
+    protected int getNumberOfShapes()
+    {
         return numberOfShapes;
     }
 
-    public int getShading() {
+    protected int getShading()
+    {
         return shading;
     }
 
-    // Setter for isSelected
-    public void setIsSelected(boolean isSelected) {
-        this.isSelected = isSelected;
-        if (isSelected) {
-            setImage(selectedCardImage); // Change to selected image
-        } else {
-            setImage(cardImage); // Change to normal image
-        }
+    protected GreenfootImage getCardImage()
+    {
+        return cardImage;
     }
 
-    // Set Image (Override Actor's method)
-    @Override
-    public void setImage(GreenfootImage image) {
-        super.setImage(image); // Call the Actor class's setImage method
+    protected GreenfootImage getSelectedCardImage()
+    {
+        return selectedCardImage;
+    }
+
+    protected boolean getIsSelected()
+    {
+        return isSelected;
+    }
+
+    protected void setIsSelected(boolean select)
+    {
+        isSelected = select;
     }
 }
+

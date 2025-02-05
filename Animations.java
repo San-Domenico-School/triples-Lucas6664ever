@@ -1,14 +1,21 @@
-import greenfoot.*; // Import Greenfoot library
+/**
+ * Write a description of class Animations here.
+ *
+ * @author (your name)
+ * @version (a version number or a date)
+ */
+import greenfoot.*;
 
-public class Animations {
-
-    // Method to play the "wobble" animation
-    public static void wobble(Card[] cards) {
-        Greenfoot.playSound("wobble.wav"); // Play the wobble sound
+public class Animations  
+{
+    public static void wobble(Card[] cards)
+    {
+        Greenfoot.playSound("wobble.wav");
+    }
+   
+    public static void slideAndTurn(Card[] cards)
+    {
+        Greenfoot.playSound("swoosh.wav");
     }
 
-    // Method to play the "slide and turn" animation
-    public static void slideAndTurn(Card[] cards) {
-        Greenfoot.playSound("swoosh.wav"); // Play the swoosh sound
-    }
 }
